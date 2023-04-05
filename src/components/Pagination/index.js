@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import _ from 'underscore';
 import * as PaginationActions from './actions';
 //import {queries} from  '../../utils';
-import createHistory from 'history/createBrowserHistory';
-const history = createHistory();
+// import { createHistory } from 'history';
+// const history = createHistory();
 
 class Pagination extends Component {
   constructor(props) {
@@ -258,7 +258,7 @@ class Pagination extends Component {
     // The delay is import for handling what looks like a conflict with Meteor's iron-router
     //@todo may be able to remove this from filterSort component not in a Meteor site
     setTimeout(function () {
-      history.replace(path + queryString + '&' + self.getExistingQueryParams());
+      // history.replace(path + queryString + '&' + self.getExistingQueryParams());
     }, 1000);
 
     return this;

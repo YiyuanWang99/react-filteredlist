@@ -1,10 +1,10 @@
 import _ from 'underscore';
-import createHistory from 'history/createBrowserHistory';
+// import { createHistory }  from 'history';
 //import moment from 'moment';
 import xhr from 'xhr';
 import Promise from 'bluebird';
 
-const history = createHistory();
+// const history = createHistory();
 /**
  * Returns the query parameter based on state.filters
  * @param queryObject
@@ -111,7 +111,7 @@ function writeQueryStringToURL(queryString, options) {
     // The delay is import for handling what looks like a conflict with Meteor's iron-router
     //@todo may be able to remove this from filterSort component not in a Meteor site
     //setTimeout(function(){
-    history.replace(replaceURL);
+    // history.replace(replaceURL);
     //},1000);
   }
 }
@@ -122,7 +122,7 @@ function writeQueryStringToURL(queryString, options) {
 function clearURLQueryString() {
   const path = window.location.href.split('?')[0].split(window.location.host)[1];
 
-  history.replace(path.replace(/&+$/, ""));
+  // history.replace(path.replace(/&+$/, ""));
 }
 
 /**
@@ -179,7 +179,7 @@ function parseParms(str = '') {
 function readQueryStringFromURL() {
   return window.location.href.split('?')[1] || '';
 
-  //return history.location.search;
+  // return history.location.search;
 }
 
 /**

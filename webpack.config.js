@@ -9,13 +9,18 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'react-filteredlist.js',
-    library: '',
+    library: 'ReactFilteredlist',
     libraryTarget: 'umd',
     libraryExport: 'default'
   },
   externals: {
 		react: 'react',
 		'react-dom': 'react-dom' 
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true,
+    port: 8080
   },
   module: {
     rules: [

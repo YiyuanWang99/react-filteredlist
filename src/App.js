@@ -17,8 +17,6 @@ import { Provider } from 'react-redux';
 // Import root app
 import App from './containers/App';
 
-// Import Language Provider
-import LanguageProvider from './containers/LanguageProvider';
 
 // Import CSS reset and Global Styles
 //import './global-styles';
@@ -26,8 +24,7 @@ import LanguageProvider from './containers/LanguageProvider';
 
 import configureStore from './store';
 
-// Import i18n messages
-import { translationMessages } from './i18n';
+
  
 // Create redux store with historys
 const initialState = {};
@@ -42,9 +39,7 @@ class DataList extends Component {
   render() {
     return (
       <Provider store={store}>
-        <LanguageProvider locale='en' messages={translationMessages}>
           <App dataListConfig={this.props.config} pushDispatch={this.props.pushDispatch || {}}> </App>
-        </LanguageProvider> 
       </Provider>
     );
   }
